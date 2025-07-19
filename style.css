@@ -1,0 +1,203 @@
+/* General Body & Font Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Latar belakang abu-abu terang */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Main Wrapper for overall layout */
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Section */
+.header-section {
+    background-color: #9b72cf; /* Warna ungu dari desain awal */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan lembut */
+}
+
+.main-heading {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #f8f8f8; /* Sedikit off-white */
+}
+
+.tagline-header {
+    font-size: 1.1em;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #e0e0e0;
+}
+
+/* Features Grid - Untuk menampung semua kartu */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Kolom responsif */
+    gap: 30px; /* Jarak antar kartu */
+    padding: 40px;
+    flex-grow: 1; /* Agar grid mengisi sisa ruang */
+    max-width: 1200px; /* Lebar maksimal konten */
+    margin: 20px auto; /* Pusat grid */
+    align-items: start; /* Kartu mulai dari atas */
+}
+
+/* Feature Card Styling */
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 15px; /* Sudut lebih membulat */
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih jelas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Menjaga konten terdistribusi */
+    min-height: 280px; /* Tinggi minimum kartu */
+}
+
+.feature-card:hover {
+    transform: translateY(-8px); /* Efek terangkat saat hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15); /* Bayangan lebih kuat saat hover */
+}
+
+.card-icon {
+    font-size: 3.5em; /* Ukuran ikon */
+    color: #9b72cf; /* Warna ikon ungu */
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #2c3e50; /* Warna judul kartu */
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 1em;
+    color: #5d6d7e; /* Warna deskripsi kartu */
+    margin-bottom: 25px;
+    flex-grow: 1; /* Deskripsi mengisi ruang */
+}
+
+/* Wide Card for Kalender Self-Care */
+.feature-card.wide-card {
+    grid-column: span 2; /* Mengambil 2 kolom pada layar lebar */
+    max-width: 600px; /* Batasi lebar pada layar besar */
+    margin: 0 auto; /* Pusat kartu ini */
+}
+
+/* Primary Button Style (for "Lihat Peta", "Jelajahi Budaya", etc.) */
+.primary-btn {
+    background-color: #8bc34a; /* Hijau cerah */
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px; /* Sudut membulat */
+    font-size: 1.05em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 10px rgba(139, 195, 74, 0.3); /* Bayangan dengan warna hijau */
+}
+
+.primary-btn:hover {
+    background-color: #7cb342; /* Hijau lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek terangkat */
+    box-shadow: 0 6px 12px rgba(139, 195, 74, 0.4);
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #333; /* Warna gelap untuk footer */
+    color: #bbb;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 40px; /* Jarak dari grid fitur */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 30px;
+        gap: 25px;
+    }
+    .feature-card.wide-card {
+        grid-column: span 1; /* Pada layar menengah, wide-card hanya 1 kolom */
+        max-width: none; /* Hapus max-width */
+    }
+}
+
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 2.2em;
+    }
+    .tagline-header {
+        font-size: 1em;
+    }
+    .features-grid {
+        padding: 20px;
+        gap: 20px;
+        grid-template-columns: 1fr; /* Semua kartu menjadi satu kolom */
+    }
+    .feature-card {
+        padding: 25px;
+        min-height: unset; /* Hapus tinggi minimum */
+    }
+    .card-icon {
+        font-size: 3em;
+    }
+    .card-title {
+        font-size: 1.5em;
+    }
+    .card-description {
+        font-size: 0.95em;
+    }
+    .primary-btn {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+    .footer {
+        font-size: 0.85em;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 1.8em;
+    }
+    .tagline-header {
+        font-size: 0.9em;
+    }
+    .header-section {
+        padding: 30px 15px;
+    }
+    .features-grid {
+        padding: 15px;
+        gap: 15px;
+    }
+    .feature-card {
+        padding: 20px;
+    }
+    .card-icon {
+        font-size: 2.5em;
+    }
+    .card-title {
+        font-size: 1.3em;
+    }
+}
